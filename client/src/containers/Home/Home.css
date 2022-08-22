@@ -1,0 +1,33 @@
+.Home {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Home__please--select  {
+    flex: .75;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+    color: white;
+    box-sizing: border-box;
+    font-style: italic;
+    font-family: Arial;
+}
+
+.Home__please--select h1, p {
+    margin-bottom: 20px;
+}
+
+@media  (max-width: 600px) {
+    .Home__please--select {
+        width: 100vw;
+        flex: 1;
+    }
+}

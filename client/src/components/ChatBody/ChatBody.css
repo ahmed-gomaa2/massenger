@@ -1,0 +1,12 @@
+.ChatBody {
+    display: flex;
+    flex-direction: column;
+    flex: .7;
+}
+
+@media(max-width: 600px) {
+    .ChatBody {
+        width: 100vw;
+        flex: 1;
+    }
+}

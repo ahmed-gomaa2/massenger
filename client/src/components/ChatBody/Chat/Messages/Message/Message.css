@@ -1,0 +1,103 @@
+.Message {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.Message p {
+    position: relative;
+    max-width: 500px;
+    border-radius: 18px;
+    /*word-wrap: break-all;*/
+    overflow-wrap: break-word;
+    -ms-word-break: break-all;
+    text-align: start;
+    /*word-break: break-all;*/
+
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    margin: 0 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.owner p {
+    margin-left: auto;
+    background-color: #0084FF;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.guest p {
+    margin-right: auto;
+    background-color: lightgray;
+    border-bottom-left-radius: 0;
+}
+
+.Message span {
+    margin: 0 25px;
+    font-size: 13px;
+}
+
+.owner span {
+    margin-left: auto;
+}
+
+.guest span {
+    margin-right: auto;
+}
+
+.owner .Message__hasFiles{
+    border-bottom-right-radius: 0 !important;
+}
+
+/*.guest .Message__hasFiles{*/
+/*    border-bottom-left-radius: 0 !important;*/
+/*}*/
+
+.Message__files {
+    /*max-height: 300px;*/
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.owner .Message__files {
+    margin-right: 20px;
+}
+
+.guest .Message__files {
+    margin-left: 20px;
+}
+
+.Message__files--file {
+    border: 1px dashed lightblue;
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    /*flex-basis: 50%;*/
+}
+
+.Message__files--file img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.owner .Message__files {
+    margin-left: auto;
+}

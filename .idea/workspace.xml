@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="43b73c71-b138-49ec-8ad2-9073aa82b21f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/src/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/components/Layout/Layout.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/components/Navigation/NavigationItems/NavigationItems.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CRwfz3ZKEj1CXe5E4A1P16yYJZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;57033a&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.49&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/React/burger&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\React\massenger\client\src\components\Navigation\Sidebar" />
+      <recent name="D:\Projects\React\massenger\client\src\components\ChatBody\Chat" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43b73c71-b138-49ec-8ad2-9073aa82b21f" name="Changes" comment="" />
+      <created>1658778811653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658778811653</updated>
+      <workItem from="1658778814119" duration="1921000" />
+      <workItem from="1658819753066" duration="25856000" />
+      <workItem from="1658867019477" duration="1363000" />
+      <workItem from="1658868398279" duration="101000" />
+      <workItem from="1658868514418" duration="502000" />
+      <workItem from="1658869026932" duration="572000" />
+      <workItem from="1658927632328" duration="20067000" />
+      <workItem from="1659040225891" duration="19054000" />
+      <workItem from="1659092615437" duration="27120000" />
+      <workItem from="1659189586587" duration="9723000" />
+      <workItem from="1659278863968" duration="8194000" />
+      <workItem from="1659362219527" duration="3384000" />
+      <workItem from="1659464020894" duration="16448000" />
+      <workItem from="1659543956891" duration="7517000" />
+      <workItem from="1659598878474" duration="13492000" />
+      <workItem from="1659630298865" duration="15096000" />
+      <workItem from="1659650376655" duration="1226000" />
+      <workItem from="1660133385876" duration="4681000" />
+      <workItem from="1660161117241" duration="3452000" />
+      <workItem from="1660237779819" duration="4293000" />
+      <workItem from="1660307678996" duration="3234000" />
+      <workItem from="1660314768985" duration="60000" />
+      <workItem from="1660330977877" duration="15268000" />
+      <workItem from="1660383836406" duration="22785000" />
+      <workItem from="1660415843845" duration="4868000" />
+      <workItem from="1660425405431" duration="3665000" />
+      <workItem from="1660465277303" duration="18867000" />
+      <workItem from="1660505095344" duration="1380000" />
+      <workItem from="1660558835109" duration="17260000" />
+      <workItem from="1660603970949" duration="8100000" />
+      <workItem from="1660648917425" duration="1320000" />
+      <workItem from="1660650976988" duration="18120000" />
+      <workItem from="1660692383659" duration="1118000" />
+      <workItem from="1660735354374" duration="22800000" />
+      <workItem from="1660766574641" duration="6117000" />
+      <workItem from="1660836804374" duration="5753000" />
+      <workItem from="1660847264352" duration="1507000" />
+      <workItem from="1660863907654" duration="1083000" />
+      <workItem from="1660923459663" duration="2409000" />
+      <workItem from="1660944205758" duration="23707000" />
+      <workItem from="1661005179054" duration="11504000" />
+      <workItem from="1661041700947" duration="4725000" />
+      <workItem from="1661074318001" duration="654000" />
+      <workItem from="1661079274785" duration="1036000" />
+      <workItem from="1661103350540" duration="4158000" />
+      <workItem from="1661117020069" duration="5627000" />
+      <workItem from="1661123819099" duration="5745000" />
+      <workItem from="1661136553346" duration="12475000" />
+      <workItem from="1661192930382" duration="3335000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

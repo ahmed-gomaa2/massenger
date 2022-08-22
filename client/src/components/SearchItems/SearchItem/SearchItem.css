@@ -1,0 +1,16 @@
+.SearchItem {
+    text-align: start;
+    padding: 10px 10px;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+.SearchItem:hover {
+    background-color: #F2F2F2;
+}

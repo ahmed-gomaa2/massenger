@@ -1,0 +1,36 @@
+.UserRoom {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all ease-in-out .2s;
+}
+
+.UserRooms a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    box-sizing: border-box;
+}
+
+.UserRoom__unseen {
+    color: red;
+    margin-left: auto;
+}
+
+.UserRoom a:active,
+.UserRoom a:hover,
+.UserRoom a.active {
+    background-color: #F5F5F5;
+    border-bottom: 1px solid gray;
+}

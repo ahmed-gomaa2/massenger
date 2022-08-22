@@ -1,0 +1,18 @@
+.UserRooms {
+    /*position: absolute;*/
+    /*top: 50px;*/
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    background-color: white;
+    opacity: 1;
+    z-index: 100;
+}
+
+/*.UserRooms {*/
+/*    -ms-overflow-style: none;  !* Internet Explorer 10+ *!*/
+/*    scrollbar-width: none;  !* Firefox *!*/
+/*}*/
+/*.UserRooms::-webkit-scrollbar {*/
+/*    display: none;  !* Safari and Chrome *!*/
+/*}*/

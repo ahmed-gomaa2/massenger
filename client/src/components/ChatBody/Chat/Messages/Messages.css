@@ -1,0 +1,31 @@
+.Messages {
+    position: relative;
+    overflow: auto;
+    display: flex;
+    /*flex: 1;*/
+    /*height: calc(100% - 40px);*/
+    flex-direction: column-reverse;
+    background: url("../../../../assets/images/wallpaper.jpg");
+}
+
+.Messages__day {
+    position: fixed;
+    top: 62px;
+    margin: 0 auto;
+    z-index: 300;
+}
+
+.Messages__more {
+    padding: 10px;
+    box-sizing: border-box;
+    color: #282c34;
+    cursor: pointer;
+}
+
+.Messages__more:hover {
+    color: blue;
+}
+
+.Messages__first {
+    color: #282c34;
+}

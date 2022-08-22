@@ -1,0 +1,42 @@
+.CurrentUserBar {
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*justify-content: space-between;*/
+    box-sizing: border-box;
+    padding: 10px;
+    background: #282c34;
+    color: white;
+}
+
+.CurrentUserBar__logout {
+    margin-left: auto;
+    cursor: pointer;
+    transition: all ease-in-out .1s;
+}
+
+.CurrentUserBar__logout:hover {
+    font-size: 20px;
+}
+
+.Sidebar__active {
+    display: none;
+}
+
+@media (max-width: 350px) {
+    .CurrentUserBar__logout {
+        margin-left: 10px;
+    }
+    .Sidebar__active {
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .Sidebar__active:hover {
+        color: red;
+    }
+}
+
