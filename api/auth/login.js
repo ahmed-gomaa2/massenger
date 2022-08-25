@@ -30,7 +30,7 @@ module.exports = (app) => {
                       },
                       (jwtError, token) => {
                           if(jwtError) {
-                              res.send(jwtError)
+                              res.json({error: jwtError})
                               // res.status(500).json({error: {type: 'jwt', msg: 'JWT ERROR!'}});
                           }else {
                               res.json({token});
