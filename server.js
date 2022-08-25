@@ -57,7 +57,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "http://3.92.207.59",
         methods: ["GET", "POST"]
     }
 });
@@ -82,9 +82,6 @@ createNewMessageRoute(app);
 setRoomSeenRoute(app);
 setRoomUnSeenRoute(app);
 getMessagesFiles(app);
-
-const storage = multer.memoryStorage();
-const upload = multer({storage})
 
 const port = process.env.PORT || 5000;
 
