@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43b73c71-b138-49ec-8ad2-9073aa82b21f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/auth/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,7 @@
       <workItem from="1661207356670" duration="377000" />
       <workItem from="1661207812152" duration="17000" />
       <workItem from="1661391202371" duration="1903000" />
-      <workItem from="1661420404857" duration="3545000" />
+      <workItem from="1661420404857" duration="4407000" />
     </task>
     <servers />
   </component>
