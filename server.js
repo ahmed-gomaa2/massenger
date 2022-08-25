@@ -57,12 +57,11 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "ec2-3-92-207-59.compute-1.amazonaws.com",
+        origin: "http://3.92.207.59",
         methods: ["GET", "POST"]
     }
 });
-
-
+io.set('transports', ['websocket']);
 //
 // app.get('/', (req, res) => {
 //    res.send('Hello from the server!');
