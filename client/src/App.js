@@ -17,14 +17,7 @@ import {MAKE_ROOM_UNSEEN} from "./store/actions/actionTypes";
 import Spinner from "./components/UI/Spinner/Spinner";
 
 
-const socket = io.connect('http://localhost:5000', {
-    transports: ['polling', 'websocket', 'flashsocket'],
-    extraHeaders: [
-        'Access-Control-Allow-Origin: *',
-        'Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE',
-        'Access-Control-Allow-Headers: Content-Type'
-    ]
-}, (socket) => {
+const socket = io.connect('http://localhost:5000', (socket) => {
   console.log(socket.id);
 });
 

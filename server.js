@@ -55,12 +55,7 @@ app.use(cors());
 
 const server = http.createServer(app);
 
-const io = new Server(server, {
-    cors: {
-        origin: "http://3.92.207.59",
-        methods: ["GET", "POST"]
-    }
-});
+const io = new Server(server);
 //
 // app.get('/', (req, res) => {
 //    res.send('Hello from the server!');
