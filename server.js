@@ -61,7 +61,6 @@ const io = new Server(server, {
         methods: ["GET", "POST"]
     }
 });
-io.set('transports', ['websocket']);
 //
 // app.get('/', (req, res) => {
 //    res.send('Hello from the server!');
