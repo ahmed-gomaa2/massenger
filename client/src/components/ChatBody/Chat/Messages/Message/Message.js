@@ -37,7 +37,7 @@ const Message = (props) => {
                     <div className={'Message__files'}>
                         {props.msg.files.map((f, i) => (
                             <div key={i} style={{flexBasis: `${props.msg.files.length === 1 ? '100%' : '49%'}`, marginBottom: `${(i === props.msg.files.length - 1 || (props.msg.files.length % 2 === 0 && i === props.msg.files.length - 2 )) && 0}px`}} className={'Message__files--file'}>
-                                <img onClick={() => props.modalOpenHandler(f)} src={'http://localhost:5000/files/' + f.iv + '/' + f.src} alt={''}/>
+                                <img onClick={() => props.modalOpenHandler(f)} src={'/files/' + f.iv + '/' + f.src} alt={''}/>
                             </div>
                         ))}
                     </div>

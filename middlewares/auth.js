@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const connection = require('../DB/database');
-const {jwtSecretKey} = require('../keys');
+const jwtSecretKey = process.env.JWT_SECRET;
 
 module.exports = (req, res, next) => {
     const token = req.header('x-auth-token');

@@ -22,6 +22,8 @@ const setRoomUnSeenRoute = require('./api/rooms/make-room-unseen');
 const getMessagesFiles = require('./api/messages/get-message-files');
 // const {buildOptions} = require("express-fileupload/lib/utilities");
 
+require('dotenv').config();
+
 const {
     encrypt,
     decrypt,
@@ -32,7 +34,6 @@ const {
     getEncryptedFilePath
 } = require('./middlewares/encrypt-messages');
 const path = require("path");
-const {cryptoKey} = require("./keys");
 
 const app = express();
 // app.engine('hbs', exphbs({extname: '.hbs'}));
@@ -85,6 +86,7 @@ getMessagesFiles(app);
 const storage = multer.memoryStorage();
 const upload = multer({storage})
 
+<<<<<<< HEAD
 app.post("/upload", upload.single("file"),  (req, res, next) => {
     console.log("file upload: ", req.file.originalname);
     saveEncryptedFile(encryptFile, getEncryptedFilePath, req.file.buffer, path.join("./uploads", req.file.originalname));
@@ -104,6 +106,8 @@ app.get("/file/:fileName", (req, res, next) => {
     res.end(buffer);
 });
 
+=======
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
 // if (process.env.NODE_ENV === 'production') {
 //     // Express will serve up production assets
 //     // like our main.js file, or main.css file!

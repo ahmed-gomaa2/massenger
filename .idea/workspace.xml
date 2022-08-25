@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43b73c71-b138-49ec-8ad2-9073aa82b21f" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/client/src/assets/images/demo.pem" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/api/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/auth/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth/register.js" afterDir="false" />
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +31,14 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2CRwfz3ZKEj1CXe5E4A1P16yYJZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Project.color": "57033a",
@@ -43,6 +51,20 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;4e2955&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.49&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/React/massenger-deploy&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
   }
 }]]></component>
   <component name="RecentsManager">
@@ -111,7 +133,12 @@
       <workItem from="1661201471511" duration="4343000" />
       <workItem from="1661207356670" duration="377000" />
       <workItem from="1661207812152" duration="17000" />
+<<<<<<< HEAD
       <workItem from="1661390933804" duration="267000" />
+=======
+      <workItem from="1661391202371" duration="1903000" />
+      <workItem from="1661420404857" duration="3545000" />
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
     </task>
     <servers />
   </component>
