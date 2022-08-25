@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const algorithm = 'aes-256-cbc';
-const key = require('../keys').cryptoKey;
+const key = process.env.CRYPTO_KEY;
 const path = require('path');
 const fs = require('fs');
 
