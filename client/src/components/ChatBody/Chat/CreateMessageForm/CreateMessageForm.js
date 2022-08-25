@@ -5,11 +5,6 @@ import {useNavigate, useParams} from "react-router-dom";
 import {sendMessage} from "../../../../store/actions/rooms";
 import {connect} from "react-redux";
 import input from "../../../UI/Input/Input";
-import InputEmoji from 'react-input-emoji'
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
-import Emoji from "../../../UI/icons/Emoji";
-import EmojiPicker from "../../../UI/icons/EmojiPicker";
 
 const CreateMessageForm = (props) => {
     const [selectedImages, setSelectedImages] = useState([]);
