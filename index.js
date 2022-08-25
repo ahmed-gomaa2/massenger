@@ -34,7 +34,6 @@ const {
     getEncryptedFilePath
 } = require('./middlewares/encrypt-messages');
 const path = require("path");
-const {cryptoKey} = require("./keys");
 
 const app = express();
 // app.engine('hbs', exphbs({extname: '.hbs'}));
@@ -86,25 +85,6 @@ getMessagesFiles(app);
 
 const storage = multer.memoryStorage();
 const upload = multer({storage})
-
-app.post("/upload", upload.single("file"),  (req, res, next) => {
-    console.log("file upload: ", req.file.originalname);
-    saveEncryptedFile(encryptFile, getEncryptedFilePath, req.file.buffer, path.join("./uploads", req.file.originalname));
-    res.status(201).json( { status: "ok" });
-});
-
-app.get("/file/:fileName", (req, res, next) => {
-    console.log("Getting file:", req.params.fileName);
-    const buffer = getEncryptedFile(path.join("./uploads", req.params.fileName), getEncryptedFilePath, decryptFile);
-    const readStream = new stream.PassThrough();
-    readStream.end(buffer);
-    res.writeHead(200, {
-        "Content-disposition": "attachment; filename=" + req.params.fileName,
-        "Content-Type": "application/octet-stream",
-        "Content-Length": buffer.length
-    });
-    res.end(buffer);
-});
 
 // if (process.env.NODE_ENV === 'production') {
 //     // Express will serve up production assets
