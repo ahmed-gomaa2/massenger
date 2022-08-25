@@ -86,41 +86,6 @@ getMessagesFiles(app);
 const storage = multer.memoryStorage();
 const upload = multer({storage})
 
-<<<<<<< HEAD
-app.post("/upload", upload.single("file"),  (req, res, next) => {
-    console.log("file upload: ", req.file.originalname);
-    saveEncryptedFile(encryptFile, getEncryptedFilePath, req.file.buffer, path.join("./uploads", req.file.originalname));
-    res.status(201).json( { status: "ok" });
-});
-
-app.get("/file/:fileName", (req, res, next) => {
-    console.log("Getting file:", req.params.fileName);
-    const buffer = getEncryptedFile(path.join("./uploads", req.params.fileName), getEncryptedFilePath, decryptFile);
-    const readStream = new stream.PassThrough();
-    readStream.end(buffer);
-    res.writeHead(200, {
-        "Content-disposition": "attachment; filename=" + req.params.fileName,
-        "Content-Type": "application/octet-stream",
-        "Content-Length": buffer.length
-    });
-    res.end(buffer);
-});
-
-=======
->>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
-// if (process.env.NODE_ENV === 'production') {
-//     // Express will serve up production assets
-//     // like our main.js file, or main.css file!
-//     app.use(express.static('client/build'));
-//
-//     // Express will serve up the index.html file
-//     // if it doesn't recognize the route
-//     const path = require('path')
-//     app.get('*', (req, res) => {
-//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//     });
-// }
-
 const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
