@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43b73c71-b138-49ec-8ad2-9073aa82b21f" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/client/src/assets/images/demo.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/api/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/auth/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth/register.js" afterDir="false" />
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
+>>>>>>> 69508997c7a18151c0f78b43d0e5dedc601eee9d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +43,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "57033a",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "16.15.0",
+    "javascript.nodejs.core.library.typings.version": "16.11.49",
+    "last_opened_file_path": "D:/Projects/React/massenger-deploy",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Project.color&quot;: &quot;4e2955&quot;,
@@ -41,8 +69,9 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\React\massenger\client\src\components\Navigation\Sidebar" />
@@ -109,8 +138,16 @@
       <workItem from="1661201471511" duration="4343000" />
       <workItem from="1661207356670" duration="377000" />
       <workItem from="1661207812152" duration="17000" />
+<<<<<<< HEAD
+      <workItem from="1661390933804" duration="267000" />
+=======
       <workItem from="1661391202371" duration="1903000" />
+<<<<<<< HEAD
       <workItem from="1661420404857" duration="4407000" />
+=======
+      <workItem from="1661420404857" duration="3545000" />
+>>>>>>> a6d3ab6f1f44c86ec3094e58ced82311bea803e7
+>>>>>>> 69508997c7a18151c0f78b43d0e5dedc601eee9d
     </task>
     <servers />
   </component>
