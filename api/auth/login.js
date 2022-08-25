@@ -6,6 +6,7 @@ const jwtSecretKey = process.env.JWT_SECRET;
 module.exports = (app) => {
     app.post('/login', (req, res) => {
        const {email, password} = req.body;
+       res.json({jwt: jwtSecretKey})
        // connection.query('SELECT * FROM users WHERE email = ? ', email, async (findUserError, findUserRes) => {
        //    if(findUserError) {
        //        res.status(500).json({error: {type: 'server', msg: 'SOMETHING WENT WRONG THE SQL DB!'}});
