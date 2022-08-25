@@ -34,7 +34,7 @@ export const loadUser = (socket) => async dispatch =>  {
     }
 
     try{
-        const user = await axios.get('/get-user');
+        const user = await axios.get('/server/get-user');
         console.log(user);
         dispatch({
             type: LOAD_USER_DATA_SUCCESS,
@@ -56,7 +56,7 @@ export const loadUser = (socket) => async dispatch =>  {
 
 export const registerUser = (userData, navigate, socket) => async dispatch => {
     try {
-        const user = await axios.post('/add-user', userData);
+        const user = await axios.post('/server/add-user', userData);
         dispatch(registerStart());
 
         await dispatch({
@@ -81,7 +81,7 @@ export const registerUser = (userData, navigate, socket) => async dispatch => {
 
 export const logUserIn = (userData, navigate, socket) => async dispatch => {
     try{
-        const user = await axios.post('/login', userData);
+        const user = await axios.post('/server/login', userData);
         dispatch(registerStart());
         await dispatch({
             type: LOGIN_USER_SUCCESS,
@@ -112,7 +112,7 @@ export const resetError = () => {
 export const logout = (socket) => async dispatch => {
     // dispatch(registerStart());
     try {
-        const loggedOut = await axios.get('/logout');
+        const loggedOut = await axios.get('/server/logout');
         dispatch({
             type: LOGOUT_SUCCESS
         });

@@ -10,7 +10,7 @@ import {
 
 export const getAllUsers = () => async dispatch => {
     try {
-        const users = await axios.get('/fetch-users');
+        const users = await axios.get('/server/fetch-users');
         dispatch({
             type: GET_ALL_USERS_SUCCESS,
             users: users.data

@@ -25,7 +25,7 @@ export const loadingSomething = () => {
 export const getAllRooms = (id, socket) => async dispatch => {
     dispatch(loadingSomething());
     try {
-        const rooms = await axios.get('/rooms');
+        const rooms = await axios.get('/server/rooms');
         dispatch({
             type: GET_USER_ROOMS_SUCCESS,
             rooms: rooms.data
@@ -50,7 +50,7 @@ export const createNewRoomAction = (data, navigate, socket) => async dispatch =>
         updated_at: new Date()
     }
     try {
-        const room = await axios.post('/create-room', data);
+        const room = await axios.post('/server/create-room', data);
         reqData.id = room.data.room;
         reqData.seen = 1;
         console.log(reqData);
@@ -114,7 +114,7 @@ export const getRoomMessages = roomId => async dispatch => {
     dispatch(loadingSomething());
     try{
         axios.room_id = roomId;
-        const messages = await axios.get('/get-room-messages/' + roomId);
+        const messages = await axios.get('/server/get-room-messages/' + roomId);
         dispatch({
             type: GET_CURRENT_ROOM_MESSAGES_SUCCESS,
             messages: messages.data
@@ -131,7 +131,7 @@ export const getMoreMessages = (room_id, start_id, navigate) => async dispatch =
     dispatch(loadingSomething());
     try{
         axios.room_id = room_id;
-        const data = await axios.get(`/load-more-messages/${room_id}/${start_id}`);
+        const data = await axios.get(`/server/load-more-messages/${room_id}/${start_id}`);
         dispatch({
             type: GET_CURRENT_ROOM_MORE_MESSAGES_SUCCESS,
             messages: data.data.messages,
@@ -176,7 +176,7 @@ export const sendMessage = (data, socket, navigate) => async dispatch => {
         console.log(formData);
 
 
-        const messageData = await axios.post('/create-message/' + data.roomId + '/' + data.receiverId, formData, options);
+        const messageData = await axios.post('/server/create-message/' + data.roomId + '/' + data.receiverId, formData, options);
 
         // messageData.id = messageId.data.msgId;
 
@@ -201,7 +201,7 @@ export const makeRoomSeen = (room_id, user_id, navigate) => async dispatch => {
     dispatch(loadingSomething());
     console.log(room_id)
     try {
-        const roomData = await axios.put(`/room-seen/${room_id}/${user_id}`);
+        const roomData = await axios.put(`/server/room-seen/${room_id}/${user_id}`);
         dispatch({
             type: MAKE_ROOM_SEEN,
             room: room_id
@@ -220,7 +220,7 @@ export const makeRoomSeen = (room_id, user_id, navigate) => async dispatch => {
 export const makeRoomUnseen = (roomId, userId) => async dispatch => {
     dispatch(loadingSomething());
     try{
-        const updatedRoom = await axios.put(`/unseen-room/${roomId}/${userId}`);
+        const updatedRoom = await axios.put(`/server/unseen-room/${roomId}/${userId}`);
         dispatch({
             type: MAKE_ROOM_UNSEEN,
             room: roomId
