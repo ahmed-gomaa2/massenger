@@ -65,12 +65,8 @@ app.use(cors({
 
 const server = http.createServer(app);
 
-const io = new Server(server, {
-    cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
-    }
-});
+const io = new Server(server);
+io.origins('*:*');
 //
 // app.get('/', (req, res) => {
 //    res.send('Hello from the server!');
