@@ -3,6 +3,8 @@ const algorithm = 'aes-256-cbc';
 const key = process.env.CRYPTO_KEY;
 const path = require('path');
 const fs = require('fs');
+const {S3UploadV2} = require('./aws-multer-upload');
+const AWS = require('aws-sdk');
 
 // console.log(key);
 // const iv = Buffer.from('efb2da92cff888c9c295dc4ee682789c', 'hex')
@@ -55,7 +57,7 @@ exports.encryptFile = (file) => {
 /*******************************************************/
 exports.decryptFile = (buffer, iv) => {
     iv = Buffer.from(iv, 'hex');
-    console.log(key, iv);
+    // console.log(key, iv);
     const decipher = crypto.createDecipheriv(algorithm, Buffer.from(key), iv);
     const decrypted =  Buffer.concat([decipher.update(buffer), decipher.final()]);
     return decrypted;
@@ -66,7 +68,7 @@ exports.getEncryptedFilePath =  function (filePath) {
     return {fileName, filePath: path.join(path.dirname(filePath) , fileName)};
 }
 
-exports.saveEncryptedFile =  function (file, encryptFile, getEncryptedFilePath, buffer, filePath) {
+exports.saveEncryptedFile = async  function (file, encryptFile, getEncryptedFilePath, buffer, filePath) {
     const encrypted = encryptFile(file);
 
     const fileInfo = getEncryptedFilePath(filePath);
@@ -78,14 +80,21 @@ exports.saveEncryptedFile =  function (file, encryptFile, getEncryptedFilePath, 
         fs.mkdirSync(path.dirname(filePath))
     }
 
-    fs.writeFileSync(filePath, encrypted);
+    // fs.writeFileSync(filePath, encrypted);
+    const data = await S3UploadV2(fileInfo.fileName, encrypted);
+    // console.log(data);
+    file.data = data;
 }
 
-exports.getEncryptedFile =  function (iv, filePath, getEncryptedFilePath, decryptFile) {
-    // filePath = getEncryptedFilePath(filePath);
-    const encrypted = fs.readFileSync(filePath);
-    const buffer = decryptFile(encrypted, iv);
-    return buffer;
+exports.getEncryptedFile =  async function  (iv, key, getEncryptedFilePath, decryptFile) {
+    const s3 = new AWS.S3({apiVersion: '2006-03-01'});
+    const param = {
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: key
+    }
+    const file = await s3.getObject(param).promise();
+    return decryptFile(file.Body, iv);
+
 }
 
 //

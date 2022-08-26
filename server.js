@@ -34,6 +34,7 @@ const {
     getEncryptedFilePath
 } = require('./middlewares/encrypt-messages');
 const path = require("path");
+const {S3UploadV2} = require("./middlewares/aws-multer-upload");
 
 const app = express();
 // app.engine('hbs', exphbs({extname: '.hbs'}));
@@ -47,11 +48,11 @@ app.use(cors({
     methods: ['GET', 'POST']
 }));
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Request-With, Content-Type, Accept");
-    next();
-});
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Request-With, Content-Type, Accept");
+//     next();
+// });
 // app.use('/files', express.static('./files'));
 
 // //default options
@@ -64,9 +65,12 @@ app.use((req, res, next) => {
 
 const server = http.createServer(app);
 
-const io = new Server(server);
-
-io.use(cors());
+const io = new Server(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 //
 // app.get('/', (req, res) => {
 //    res.send('Hello from the server!');
@@ -86,6 +90,19 @@ createNewMessageRoute(app);
 setRoomSeenRoute(app);
 setRoomUnSeenRoute(app);
 getMessagesFiles(app);
+
+const storage = multer.memoryStorage();
+
+const upload = multer({
+    storage
+});
+
+app.post('/upload', upload.array('files'), async (req, res) => {
+    const file = req.files[0]
+    console.log(file);
+    const result = await S3UploadV2(file.originalname, file.buffer);
+    res.json({status: 'success', result});
+})
 
 const port = process.env.PORT || 5000;
 

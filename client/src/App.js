@@ -17,7 +17,7 @@ import {MAKE_ROOM_UNSEEN} from "./store/actions/actionTypes";
 import Spinner from "./components/UI/Spinner/Spinner";
 
 
-const socket = io.connect('/server/', (socket) => {
+const socket = io.connect('http://localhost:5000', (socket) => {
   console.log(socket.id);
 });
 

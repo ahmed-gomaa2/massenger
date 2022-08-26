@@ -12,8 +12,10 @@ const path = require("path");
 
 
 module.exports = app => {
-    app.get('/files/:iv/:fileName', (req, res) => {
-        const buffer = getEncryptedFile(req.params.iv, path.join('./files/', req.params.fileName), getEncryptedFilePath, decryptFile);
+    app.get('/files/:iv/:filename', async (req, res) => {
+        const Key = `files/${req.params.filename}`;
+        const buffer = await getEncryptedFile(req.params.iv, Key, getEncryptedFilePath, decryptFile);
+
         const readStream = new stream.PassThrough();
         readStream.end(buffer);
 
@@ -22,6 +24,7 @@ module.exports = app => {
             "Content-Type": "application/octet-stream",
             "Content-Length": buffer.length
         });
+
         res.end(buffer);
     });
 }

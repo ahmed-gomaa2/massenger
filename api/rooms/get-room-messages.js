@@ -41,12 +41,12 @@ module.exports = app => {
                                     let messages = [];
                                     getMessagesRes.map(async (m, i)=> {
                                         // if(m.hasFiles) {
-                                        console.log(m.hasFiles);
+                                        // console.log(m.hasFiles);
                                         await connection.query('SELECT * FROM files WHERE message_id = ?', m.id, (fetchFilesError, fetchFilesRes) => {
                                             if(fetchFilesError) {
                                                 res.status(500).json({error: {type: 'server', msg: 'SOMETHING WENT WRONG WITH THE SQL SERVER!'}})
                                             }else {
-                                                console.log(fetchFilesRes)
+                                                // console.log(fetchFilesRes)
                                                 m.files = [...fetchFilesRes.map((f, i) => {
                                                     f.src = decrypt(f.src);
                                                     return f;

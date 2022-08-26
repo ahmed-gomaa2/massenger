@@ -147,7 +147,7 @@ const Messages = (props, ref) => {
             {/*<p style={{left: `calc(${dayPosition}px - 42px)`}} className={'Messages__day'}>{day}</p>*/}
             {showMessages(props.messages)}
             {props.more && <p className={'Messages__more'} onClick={getMoreMessagesHandler}>get more</p>}
-           <Modal modalClosed={modelCloseHandler} show={showModal} >{currentModalImg && <img style={{width: '100%', height: '100%'}} src={'/server/files/' + currentModalImg?.iv + '/' + currentModalImg?.src} />}</Modal>
+           <Modal modalClosed={modelCloseHandler} show={showModal} >{currentModalImg && <img style={{width: '100%', height: '100%'}} src={'/server/files/' +  currentModalImg.iv + '/' + currentModalImg.fileKey.split('/')[1] } />}</Modal>
         </div>
     )
 }
