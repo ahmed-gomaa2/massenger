@@ -17,7 +17,7 @@ import {MAKE_ROOM_UNSEEN} from "./store/actions/actionTypes";
 import Spinner from "./components/UI/Spinner/Spinner";
 
 
-const socket = io.connect('/socket.io',{
+const socket = io.connect('http://localhost:5000',{
     withCredentials: true,
     extraHeaders: {
         "my-custom-header": "abcd"
