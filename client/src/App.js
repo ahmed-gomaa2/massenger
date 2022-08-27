@@ -18,10 +18,7 @@ import Spinner from "./components/UI/Spinner/Spinner";
 
 
 const socket = io.connect('http://localhost:5000',{
-    withCredentials: true,
-    extraHeaders: {
-        "my-custom-header": "abcd"
-    }
+    path: '/ws/'
 }, (socket) => {
   console.log(socket.id);
 });
