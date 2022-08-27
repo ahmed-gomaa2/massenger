@@ -18,4 +18,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(null, {sidebarToggle}) (UserRoom);
+export default connect(mapStateToProps, {sidebarToggle}) (UserRoom);
