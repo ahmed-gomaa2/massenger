@@ -29,7 +29,7 @@ const Home = props => {
                 <>
                     <Sidebar socket={props.socket} />
                     {(!props.settingCurrentRoom && params.id) ? <Outlet /> : (
-                        <div className={'Home__please--select'}>
+                        <div style={{height: `${window}px`}} className={'Home__please--select'}>
                         <h1>TALK</h1>
                         <p>Chat in secure and fast with <strong>TALK!</strong></p>
                         <p>select a room and start talking</p>

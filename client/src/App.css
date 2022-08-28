@@ -4,9 +4,21 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .App {
   text-align: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .App-logo {

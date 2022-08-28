@@ -36,7 +36,7 @@ const Sidebar = props => {
     }
 
     return (
-        <div className={`Sidebar ${props.sidebar && 'Sidebar__show'}`}>
+        <div style={{height: `${window.innerHeight}px`}} className={`Sidebar ${props.sidebar && 'Sidebar__show'}`}>
             <CurrentUserBar socket={props.socket} currentUser={props.currentUser} />
             <SearchBox startSearching={props.startSearching} value={props.searchTerm} clearListHandler={clearList} inputChangeHandler={e => handleInputChange(e)} />
             {props.searching ? <SearchItems socket={props.socket} searchList={props.searchResults} /> : <UserRooms socket={props.socket} />}

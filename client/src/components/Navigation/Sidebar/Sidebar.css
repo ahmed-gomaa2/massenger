@@ -1,6 +1,7 @@
 .Sidebar {
     /*width: 300px;*/
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 100%;
     min-width: 300px;
     background-color: white;
     position: relative;
