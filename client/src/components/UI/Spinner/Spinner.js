@@ -2,7 +2,7 @@ import React from 'react';
 import './Spinner.css';
 
 const Spinner = props => (
-    <div className="Loader">Loading...</div>
+    <div className="lds-dual-ring"></div>
 )
 
 export default Spinner;

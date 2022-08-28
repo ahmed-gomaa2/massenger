@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {SET_CURRENT_ROOM} from "../actions/actionTypes";
+import {END_SENDING_MESSAGE, SET_CURRENT_ROOM} from "../actions/actionTypes";
 import {type} from "@testing-library/user-event/dist/type";
 
 // id(pin):1
@@ -18,11 +18,35 @@ const initialState = {
     messages: [],
     more: false,
     loading: false,
-    settingCurrentRoom: true
+    settingCurrentRoom: true,
+    sendingMessage: false,
+    fetchingMessages: true,
+    dummyMessageData: {}
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
+        case actionTypes.START_SENDING_MESSAGE:
+            return {
+                ...state,
+                sendingMessage: true
+            }
+        case actionTypes.END_SENDING_MESSAGE:
+            return {
+                ...state,
+                sendingMessage: false
+            }
+        case actionTypes.START_FETCHING_FILES:
+            return {
+                ...state,
+                fetchingMessages: true
+            }
+        case actionTypes.END_FETCHING_FILES:
+            return {
+                ...state,
+                fetchingMessages: false
+            }
+
         case actionTypes.LOADING_SOMETHING:
             return {
                 ...state,
@@ -38,6 +62,20 @@ export default (state = initialState, action) => {
                 ...state,
                 settingCurrentRoom: false
             }
+        case actionTypes.ADD_DUMMY_MESSAGE:
+            const dummyMessage = {
+                body: action.message.body,
+                create_at: new Date(),
+                sender_id: action.message.senderId,
+                receiver_id: action.message.receiverId,
+                room_id: action.message.roomId,
+                files: action.message.files,
+                hasFiles: action.message.hasFiles
+            }
+            return {
+                ...state,
+                dummyMessageData: dummyMessage
+            }
         case actionTypes.GET_USER_ROOMS_SUCCESS:
             return {
                 ...state,
@@ -52,8 +90,8 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 error: {
-                    type: action.error.type,
-                    msg: action.error.msg
+                    type: action.error?.type,
+                    msg: action.error?.msg
                 },
                 loading: false
             }

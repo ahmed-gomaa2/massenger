@@ -4,6 +4,7 @@ import './Chat.css';
 import Messages from "./Messages/Messages";
 import {addMessageToRoomMessages} from "../../../store/actions/rooms";
 import {connect} from "react-redux";
+import Spinner from "../../UI/Spinner/Spinner";
 
 function Chat (props) {
     const [formHeight, setFormHeight] = useState(null);
@@ -61,10 +62,17 @@ function Chat (props) {
             {/*        return <p key={createRandomKey()}>{ms.messageBody}</p>*/}
             {/*    })}*/}
             {/*</div>*/}
-            <Messages formHeight={formHeight} />
+            {props.fetchingMessages ? <Spinner /> : <Messages formHeight={formHeight} />}
+
             <CreateMessageForm formHeight={h => setFormHeight(h)} socket={props.socket} />
         </div>
     )
+}
+
+const mapStateToProps = state => {
+    return {
+        fetchingMessages: state.rooms.fetchingMessages
+    }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -73,4 +81,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps) (React.memo(Chat));
+export default connect(mapStateToProps, mapDispatchToProps) (React.memo(Chat));

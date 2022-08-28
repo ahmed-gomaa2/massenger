@@ -7,6 +7,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import moment from 'moment';
 import FlipMove from "react-flip-move";
 import Modal from "../../../UI/Modal/Modal";
+import DummyMessage from "../../../UI/DummyMessage/DummyMessage";
 
 const Messages = (props, ref) => {
     // const [isVisible, setIsVisible] = useState(false);
@@ -145,9 +146,10 @@ const Messages = (props, ref) => {
     return (
         <div ref={messagesRef} className={'Messages'} style={props.formHeight && {height: `calc(100% - ${props.formHeight}px`}}>
             {/*<p style={{left: `calc(${dayPosition}px - 42px)`}} className={'Messages__day'}>{day}</p>*/}
+            {props.sendingMessage ? <DummyMessage /> : null}
             {showMessages(props.messages)}
             {props.more && <p className={'Messages__more'} onClick={getMoreMessagesHandler}>get more</p>}
-           <Modal modalClosed={modelCloseHandler} show={showModal} >{currentModalImg && <img style={{width: '100%', height: '100%'}} src={'/server/files/' +  currentModalImg.iv + '/' + currentModalImg.fileKey.split('/')[1] } />}</Modal>
+            <Modal modalClosed={modelCloseHandler} show={showModal} >{currentModalImg && <img style={{width: '100%', height: '100%'}} src={'/server/files/' +  currentModalImg.iv + '/' + currentModalImg.fileKey.split('/')[1] } />}</Modal>
         </div>
     )
 }
@@ -158,7 +160,8 @@ const mapStateToProps = state => {
         more: state.rooms.more,
         loading: state.rooms.loading,
         users: state.users.users,
-        currentRoom: state.rooms.currentRooms
+        currentRoom: state.rooms.currentRooms,
+        sendingMessage: state.rooms.sendingMessage
     }
 }
 

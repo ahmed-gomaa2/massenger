@@ -1,17 +1,18 @@
 import axios from "axios";
 import {
+    ADD_DUMMY_MESSAGE,
     ADD_ROOM_FAIL,
-    ADD_ROOM_SUCCESS, END_SETTING_CURRENT_ROOM,
+    ADD_ROOM_SUCCESS, END_FETCHING_FILES, END_SENDING_MESSAGE, END_SETTING_CURRENT_ROOM,
     GET_CURRENT_ROOM_MESSAGES_FAIL,
     GET_CURRENT_ROOM_MESSAGES_SUCCESS, GET_CURRENT_ROOM_MORE_MESSAGES_SUCCESS,
     GET_USER_ROOMS_FAIL,
     GET_USER_ROOMS_SUCCESS, LOADING_SOMETHING,
-    MAKE_ROOM_SEEN, MAKE_ROOM_SEEN_FAIL, MAKE_ROOM_UNSEEN, MAKE_ROOM_UNSEEN_FAIL,
+    MAKE_ROOM_SEEN, MAKE_ROOM_SEEN_FAIL, MAKE_ROOM_UNSEEN, MAKE_ROOM_UNSEEN_FAIL, REMOVE_DUMMY_MESSAGE,
     RESET_CURRENT_ROOM,
     RESET_USERS_ROOMS,
     SEND_MESSAGE_FAIL,
-    SEND_MESSAGE_SUCCESS,
-    SET_CURRENT_ROOM, START_SETTING_CURRENT_ROOM
+    SEND_MESSAGE_SUCCESS, SENDING_MESSAGE,
+    SET_CURRENT_ROOM, START_FETCHING_FILES, START_SENDING_MESSAGE, START_SETTING_CURRENT_ROOM
 } from "./actionTypes";
 import {clearSearchList} from "./users";
 import {logout} from "./auth";
@@ -110,15 +111,29 @@ export const setCurrentRoom = (id, userId, navigate) => dispatch => {
     }
 }
 
+const startFetchingFiles = () => {
+    return {
+        type: START_FETCHING_FILES
+    }
+}
+
+const endFetchingFiles = () => {
+    return {
+        type: END_FETCHING_FILES
+    }
+}
+
 export const getRoomMessages = roomId => async dispatch => {
     dispatch(loadingSomething());
     try{
+        dispatch(startFetchingFiles());
         axios.room_id = roomId;
         const messages = await axios.get('/server/get-room-messages/' + roomId);
         dispatch({
             type: GET_CURRENT_ROOM_MESSAGES_SUCCESS,
             messages: messages.data
         });
+        dispatch(endFetchingFiles());
     }catch (err) {
         dispatch({
             type: GET_CURRENT_ROOM_MESSAGES_FAIL,
@@ -145,9 +160,40 @@ export const getMoreMessages = (room_id, start_id, navigate) => async dispatch =
     }
 }
 
+const startSendingMessage = () => {
+    return {
+        type: START_SENDING_MESSAGE
+    }
+}
+
+const endSendingMessage = () => {
+    return {
+        type:END_SENDING_MESSAGE
+    }
+}
+
+const addDummyMessage = (data) => {
+    return {
+        type: ADD_DUMMY_MESSAGE,
+        message: data
+    }
+}
+
+const removeDummyMessage = (data) => {
+    return {
+        type: REMOVE_DUMMY_MESSAGE,
+        message: data
+    }
+}
+
 export const sendMessage = (data, socket, navigate) => async dispatch => {
     // dispatch(loadingSomething());
+    // dispatch()
     try {
+        dispatch(startSendingMessage(data));
+        if(data.hasFiles) {
+            dispatch(addDummyMessage(data));
+        }
         const options = {
             headers: {
                 'Accept': 'application/x-www-form-urlencoded'
@@ -174,22 +220,19 @@ export const sendMessage = (data, socket, navigate) => async dispatch => {
         // }
 
         console.log(formData);
-
-
         const messageData = await axios.post('/server/create-message/' + data.roomId + '/' + data.receiverId, formData, options);
-
-        // messageData.id = messageId.data.msgId;
-
+        // dispatch(removeDummyMessage(data));
+        dispatch(endSendingMessage());
         dispatch(addMessageToRoomMessages(messageData.data));
-
         await socket.emit('send_message', messageData.data);
 
     }catch (err) {
+        console.log(err);
         dispatch({
             type: SEND_MESSAGE_FAIL,
             error: err?.response?.data?.error
         });
-        if(err.response.data.error.type === 'jwt') {
+        if(err.response?.data?.error?.type === 'jwt') {
             console.log('jwt')
             logout(socket);
             navigate('/login');
