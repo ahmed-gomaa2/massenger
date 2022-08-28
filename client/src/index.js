@@ -11,6 +11,13 @@ const history = createBrowserHistory({window});
 
 const store = configureStore(reducer);
 
+const documentHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', documentHeight)
+documentHeight()
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>

@@ -4,13 +4,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --doc-height: 100%;
+}
+
 html {
   overflow: hidden;
   width: 100%;
+  height: var(--doc-height);
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
+  height: var(--doc-height);
   position: fixed;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
