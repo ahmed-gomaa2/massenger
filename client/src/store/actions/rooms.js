@@ -190,8 +190,8 @@ export const sendMessage = (data, socket, navigate) => async dispatch => {
     // dispatch(loadingSomething());
     // dispatch()
     try {
-        dispatch(startSendingMessage(data));
         if(data.hasFiles) {
+            dispatch(startSendingMessage(data));
             dispatch(addDummyMessage(data));
         }
         const options = {
