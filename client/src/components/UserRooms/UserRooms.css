@@ -2,7 +2,7 @@
     /*position: absolute;*/
     /*top: 50px;*/
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - 96px);
     overflow: auto;
     background-color: white;
     opacity: 1;
