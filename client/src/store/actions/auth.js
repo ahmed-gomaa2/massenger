@@ -4,7 +4,8 @@ import {
     LOAD_USER_DATA_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER_SUCCESS, LOGOUT_FAIL, LOGOUT_SUCCESS, REGISTER_USER_END,
     REGISTER_USER_FAIL,
     REGISTER_USER_START,
-    REGISTER_USER_SUCCESS, RESET_CURRENT_USER, RESET_ERROR
+    REGISTER_USER_SUCCESS,
+    RESET_ERROR
 } from "./actionTypes";
 import setHeadersHelper from "../../utls/setHeadersHelper";
 import {getAllRooms, resetCurrentRoom, resetMessages} from "./rooms";
@@ -27,6 +28,7 @@ export const loadUser = (socket) => async dispatch =>  {
     console.log(socket);
     dispatch(registerStart());
     const token = localStorage.token;
+    console.log(token);
     // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjU4ODYyNjc5LCJleHAiOjE2NTg4NjMwMjl9.vS4mn34TZUT5xaSZ_G8J17RGgTMzKsJ4KlMmg-QPiNc";
 
     if(token) {
