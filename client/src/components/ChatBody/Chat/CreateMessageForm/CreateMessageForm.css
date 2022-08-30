@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 40px;
     height: auto;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
 }

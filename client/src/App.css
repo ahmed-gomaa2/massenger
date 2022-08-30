@@ -17,6 +17,7 @@ html {
 body {
   height: 100vh;
   height: var(--doc-height);
+  min-height: fill-available;
   position: fixed;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

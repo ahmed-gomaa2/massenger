@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {useResizeDetector} from "react-resize-detector";
 import CreateMessageForm from "./CreateMessageForm/CreateMessageForm";
 import './Chat.css';
 import Messages from "./Messages/Messages";
@@ -8,6 +9,13 @@ import Spinner from "../../UI/Spinner/Spinner";
 
 function Chat (props) {
     const [formHeight, setFormHeight] = useState(null);
+    const [chatWidth, setChatWidth] = useState(null);
+    const refDet = useResizeDetector();
+
+    useEffect(() => {
+        setChatWidth(refDet.width);
+    }, [refDet]);
+
     // const [currentMessage, setCurrentMessage] = useState('');
     // const [messages, setMessages] = useState([]);
 
@@ -47,7 +55,7 @@ function Chat (props) {
     const handleFormHeightChangeHandler = () => {}
 
     return(
-        <div className={'Chat'}>
+        <div ref={refDet.ref} className={'Chat'}>
 
             {/*<div className={'chat-header'}>*/}
             {/*    <p>Live Chat</p>*/}
@@ -64,7 +72,7 @@ function Chat (props) {
             {/*</div>*/}
             {props.fetchingMessages ? <Spinner /> : <Messages formHeight={formHeight} />}
 
-            <CreateMessageForm formHeight={h => setFormHeight(h)} socket={props.socket} />
+            <CreateMessageForm chatWidth={chatWidth} formHeight={h => setFormHeight(h)} socket={props.socket} />
         </div>
     )
 }

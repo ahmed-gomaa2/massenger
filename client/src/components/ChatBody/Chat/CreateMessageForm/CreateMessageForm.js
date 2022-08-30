@@ -79,7 +79,7 @@ const CreateMessageForm = (props) => {
 
 
     return (
-        <div ref={refDet.ref} className={'CreateMessageForm'}>
+        <div style={props.chatWidth && {width: `${props.chatWidth}px`}} ref={refDet.ref} className={'CreateMessageForm'}>
             <form onSubmit={e => sendMessageHandler(e)} className={'CreateMessageForm__form'} encType={'multipart/form-data'}>
                 <div id="w-input-container" onClick={e => setFocus(e)}>
                     <div className={'CreateMessageForm__preview'} ref={imgRef}>
