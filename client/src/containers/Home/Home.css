@@ -25,9 +25,25 @@
     margin-bottom: 20px;
 }
 
+.Home__chat-toggle--hidden {
+    display: none;
+}
+
+
 @media  (max-width: 600px) {
     .Home__please--select {
         width: 100vw;
         flex: 1;
+    }
+
+    .Home__chat-toggle {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        background: unset;
+        color: blueviolet;
+        border: 1px solid blueviolet;
+        cursor: pointer;
+        outline: none;
     }
 }

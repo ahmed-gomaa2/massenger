@@ -7,6 +7,7 @@ import './Home.css';
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import ChatBody from "../../components/ChatBody/ChatBody";
 import {setCurrentRoom} from "../../store/actions/rooms";
+import {sidebarToggle} from "../../store/actions/users";
 
 const Home = props => {
 
@@ -30,9 +31,10 @@ const Home = props => {
                     <Sidebar socket={props.socket} />
                     {(!props.settingCurrentRoom && params.id) ? <Outlet /> : (
                         <div className={'Home__please--select'}>
-                        <h1>TALK</h1>
-                        <p>Chat in secure and fast with <strong>TALK!</strong></p>
-                        <p>select a room and start talking</p>
+                            <h1>TALK</h1>
+                            <p>Chat in secure and fast with <strong>TALK!</strong></p>
+                            <p>select a room and start talking</p>
+                            <div onClick={props.sidebarToggle} className={'Home__chat-toggle Home__chat-toggle--hidden'}>OPEN CHATS</div>
                         </div>
                     )}
                 </>
@@ -54,4 +56,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {setCurrentRoom}) (Home) ;
+export default connect(mapStateToProps, {setCurrentRoom, sidebarToggle}) (Home) ;
