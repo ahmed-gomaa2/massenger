@@ -5,6 +5,7 @@ const jwtSecretKey = process.env.JWT_SECRET;
 module.exports = (req, res, next) => {
     const token = req.header('x-auth-token');
     res.send(token);
+    console.log('hello there!')
     // console.log(req.body);
     // if(!token) {
     //     // return res.status(401).send(token);
