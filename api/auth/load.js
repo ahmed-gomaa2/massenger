@@ -16,8 +16,8 @@ module.exports = (app) => {
         //            res.send(getUserRes[0]);
         //        }
         //     });
-        // }catch(err) {
-        //     res.status(500).json({error: {type: 'server', msg: 'SOMETHING WENT WRONG WITH THE SERVER!'}});
-        // }
+        }catch(err) {
+            res.status(500).json({error: {type: 'server', msg: 'SOMETHING WENT WRONG WITH THE SERVER!'}});
+        }
     });
 }
