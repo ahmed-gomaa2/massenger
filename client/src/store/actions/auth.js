@@ -32,10 +32,7 @@ export const loadUser = (socket) => async dispatch =>  {
         console.log(token);
         // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxfSwiaWF0IjoxNjU4ODYyNjc5LCJleHAiOjE2NTg4NjMwMjl9.vS4mn34TZUT5xaSZ_G8J17RGgTMzKsJ4KlMmg-QPiNc";
 
-        if(token) {
-            console.log(token)
-            setHeadersHelper(token);
-        }
+        setHeadersHelper(token);
 
         const user = await axios.get('/server/get-user');
         console.log(user);
