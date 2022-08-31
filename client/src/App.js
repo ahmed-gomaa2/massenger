@@ -17,7 +17,7 @@ import {MAKE_ROOM_UNSEEN} from "./store/actions/actionTypes";
 import Spinner from "./components/UI/Spinner/Spinner";
 
 
-const socket = io.connect('http://3.92.207.59',{
+const socket = io.connect('http://52.90.160.28/',{
     path: '/ws/'
 }, (socket) => {
   console.log(socket.id);
