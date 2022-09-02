@@ -40,6 +40,10 @@ function App(props) {
     }, []);
 
     useEffect(() => {
+        document.title = "Messenger"
+    }, []);
+
+    useEffect(() => {
         if(props.currentUser?.id  && !props.loadingRoom ) {
             if(socket.hasListeners('receive_message')) socket.removeListener('receive_message');
             socket.on('receive_message', (data) => {
