@@ -234,8 +234,8 @@ export const sendMessage = (data, socket, navigate) => async dispatch => {
         });
         if(err.response?.data?.error?.type === 'jwt') {
             console.log('jwt')
-            logout(socket);
             navigate('/login');
+            logout(socket);
         }
     }
 }
