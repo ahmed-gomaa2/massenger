@@ -5,7 +5,7 @@
     /*flex: 1;*/
     /*height: calc(100% - 40px);*/
     flex-direction: column-reverse;
-    background: url("../../../../assets/images/wallpaper.jpg");
+    /*background: url("../../../../assets/images/wallpaper.jpg");*/
 }
 
 .Messages__day {
